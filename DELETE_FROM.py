@@ -5,10 +5,9 @@ conn = sqlite3.connect("database.db")
 cur = conn.cursor()
 
 
-tick = "CSCO"
+tick = "AAPL"
 cur.execute("""    
-DELETE FROM Ticker_1H
-WHERE Ticker = 'TSLA'
+DELETE FROM Ticker_1D WHERE Ticker = 'AAPL'
 """)
 
 conn.commit()
