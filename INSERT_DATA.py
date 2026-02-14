@@ -5,8 +5,8 @@ from datetime import datetime
 
 engine = create_engine("sqlite:///database.db")
 
-tick = "XPO"
-df = yf.Ticker(tick).history("2y", interval="1h")
+tick = "AAPL"
+df = yf.Ticker(tick).history("10y", interval="1d")
 
 # df.reset_index(inplace=True)
 # df.rename(columns={"Date":"Datetime"}, inplace=True)
@@ -16,5 +16,5 @@ df.drop(["Stock Splits", "Dividends"], axis=1, inplace=True)
 df["Ticker"] = tick
 df["InsertTime"] = datetime.now()
 
-df.to_sql("Ticker_1H", con=engine, if_exists="append")
+df.to_sql("Ticker_1D", con=engine, if_exists="append")
 print(df.head())

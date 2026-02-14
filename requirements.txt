@@ -1,3 +1,5 @@
+yfinance
+sqlalchemy
 numpy
 pandas
 pandas-ta
