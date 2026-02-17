@@ -8,3 +8,5 @@ tensorflow
 scikit-learn
 duckdb
 seaborn
+scikit-image
+PyWavelets
